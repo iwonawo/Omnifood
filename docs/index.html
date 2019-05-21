@@ -326,19 +326,19 @@
             <div class="map"></div>
 
             <div class="form-box" id="form">    <!--id potrzebne dla pliku php-->
-                <div class="row u-margin-bottom-small">
+                <div class="row">
                     <h2 class="heading heading__secondary">WE'RE HAPPY TO HEAR FROM YOU</h2>
                 </div>
 
                 <div class="row">
                     <form action="mailer-new.php" class="form" method="post">
-                            
+        
                         <div class="row u-margin-bottom-small">
                             <div class="col-1-of-3">
                                 <label for="name" class="form__label">Name</label>
                             </div>
                             <div class="col-2-of-3">
-                                <input type="text" class="form__input" id="name" name="name" placeholder="Your name" required>
+                                <input type="text" class="form__input" id="name" placeholder="Your name" required>
                             </div>  
                         </div>
                         
@@ -347,7 +347,7 @@
                                 <label for="email" class="form__label">Email</label>
                             </div>
                             <div class="col-2-of-3">
-                                <input type="email" class="form__input" id="email" name="email" placeholder="Your email" required>
+                                <input type="email" class="form__input" id="email" placeholder="Your email" required>
                             </div>  
                         </div>
                             
@@ -375,28 +375,33 @@
                         </div>
                                 
                         <div class="row u-margin-bottom-small">
-                            <div class="col-1-of-3">
+                            <div class="col-1-of-3 u-margin-bottom-small">
                                 <label for="comment" class="form__label">Drop us a line</label>
                             </div>
-                            <div class="col-2-of-3">
-                                <textarea class="form__input" id="comment" name="message" placeholder="Your message" required></textarea>
+                            <div class="col-2-of-3 u-margin-bottom-small">
+                                <textarea class="form__input" id="comment" placeholder="Your message" required></textarea>
                             </div>  
                         </div>     
-
-<!--div na info z pliku php-->
+                        
+<!-- div na info z pliku php   
+                        
                         <div class="row u-margin-bottom-small">
+                            
+                            <div class="form-messages success">Thank you! Your message has been sent.</div>
+                            <div class="form-messages error">Oops! Something went wrong. Please try again!</div>
+                        
                             <?php    
-                                if (isset($_GET['success'])) {
-                                    if($_GET['success'] == 1) {
-                                        echo "<div class=\"form-messages success\">Thank you! Your message has been sent.</div>";
-                                    }                                
-                                    if($_GET['success'] == -1) {
-                                        echo "<div class=\"form-messages error\">Oops! Something went wrong. Please try again!</div>";
-                                    }
+                                if($_GET['success'] == 1) {
+                                    echo "<div class=\"form-messages success\">Thank you! Your message has been sent.</div>";
+                                }
+                                if($_GET['success'] == -1) {
+                                    echo "<div class=\"form-messages error\">Oops! Something went wrong. Please try again!</div>";
                                 }
                             ?>
-                        </div>
 
+                        </div>
+-->
+                        
 
                         <div class="row">
                             <div class="col-1-of-3">
